@@ -61,7 +61,7 @@ export const CreateTrainScheduleForm = () => {
             station_to_id,
             train_id,
             departure_time: departure_time.toISOString(),
-            arrive_time: departure_time.toISOString(),
+            arrive_time: arrive_time.toISOString(),
           }),
         );
       }
