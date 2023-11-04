@@ -1,0 +1,77 @@
+.train-schedule {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &-create {
+    width: 360px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    &__header {
+      display: flex;
+      justify-content: center;
+    }
+
+    &-form {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      gap: 15px;
+    }
+  }
+
+  &-update {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+
+    &__form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 10px;
+      width: 360px;
+    }
+
+    &__err {
+      display: flex;
+      align-items: center;
+      font-size: 50px;
+      font-weight: 600;
+    }
+  }
+
+  &__header {
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    font-size: 40px;
+    font-weight: 700;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    margin-top: 40px;
+  }
+
+  &-item {
+    display: flex;
+    gap: 40px;
+    background-color: orange;
+    padding: 15px;
+    border-radius: 5px;
+
+    &__field {
+      color: purple;
+      font-weight: 600;
+    }
+  }
+}

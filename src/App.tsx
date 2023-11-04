@@ -1,25 +1,34 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from 'react-router-dom';
+
+import PrivateRoute from './components/PrivateRoute';
+import PublicRoute from './components/PublicRoute';
+import { useAppSelector } from './hooks/reduxHooks';
+import { ROUTES } from './constants/routes';
+import { SignIn } from './pages/SignIn';
+import { Train } from './pages/Train';
+import { TrainSchedule } from './pages/TrainSchedule';
+import { EditTrainSchedule } from './pages/EditTrainSchedule';
+import { Station } from './pages/Station';
 
 function App() {
+  const { isAuthorized } = useAppSelector((state) => state.auth);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route element={<PublicRoute isAuthorized={isAuthorized} />}>
+        <Route path={ROUTES.sign_in} element={<SignIn />} />
+      </Route>
+      <Route element={<PrivateRoute isAuthorized={isAuthorized} />}>
+        <Route path={ROUTES.train_schedule} element={<TrainSchedule />} />
+        <Route
+          path={`${ROUTES.train_schedule}/:id`}
+          element={<EditTrainSchedule />}
+        />
+        <Route path={ROUTES.train} element={<Train />} />
+        <Route path={ROUTES.station} element={<Station />} />
+      </Route>
+    </Routes>
   );
 }
 

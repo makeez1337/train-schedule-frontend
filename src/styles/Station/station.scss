@@ -1,0 +1,13 @@
+.station-create {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    width: 360px;
+    gap: 10px;
+  }
+}
