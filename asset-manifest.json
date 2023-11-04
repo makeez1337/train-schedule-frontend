@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/train-schedule-frontend/static/css/main.7ba48ea4.css",
+    "main.js": "/train-schedule-frontend/static/js/main.0e4d907b.js",
+    "index.html": "/train-schedule-frontend/index.html",
+    "main.7ba48ea4.css.map": "/train-schedule-frontend/static/css/main.7ba48ea4.css.map",
+    "main.0e4d907b.js.map": "/train-schedule-frontend/static/js/main.0e4d907b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7ba48ea4.css",
+    "static/js/main.0e4d907b.js"
+  ]
+}
