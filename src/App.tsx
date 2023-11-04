@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { HashRouter, Route, Routes, Navigate } from 'react-router-dom';
 
 import PrivateRoute from './components/PrivateRoute';
 import PublicRoute from './components/PublicRoute';
@@ -15,20 +15,23 @@ function App() {
   const { isAuthorized } = useAppSelector((state) => state.auth);
 
   return (
-    <Routes>
-      <Route element={<PublicRoute isAuthorized={isAuthorized} />}>
-        <Route path={ROUTES.sign_in} element={<SignIn />} />
-      </Route>
-      <Route element={<PrivateRoute isAuthorized={isAuthorized} />}>
-        <Route path={ROUTES.train_schedule} element={<TrainSchedule />} />
-        <Route
-          path={`${ROUTES.train_schedule}/:id`}
-          element={<EditTrainSchedule />}
-        />
-        <Route path={ROUTES.train} element={<Train />} />
-        <Route path={ROUTES.station} element={<Station />} />
-      </Route>
-    </Routes>
+    <HashRouter>
+      <Routes>
+        <Route element={<PublicRoute isAuthorized={isAuthorized} />}>
+          <Route path={ROUTES.sign_in} element={<SignIn />} />
+        </Route>
+        <Route element={<PrivateRoute isAuthorized={isAuthorized} />}>
+          <Route path={ROUTES.train_schedule} element={<TrainSchedule />} />
+          <Route
+            path={`${ROUTES.train_schedule}/:id`}
+            element={<EditTrainSchedule />}
+          />
+          <Route path={ROUTES.train} element={<Train />} />
+          <Route path={ROUTES.station} element={<Station />} />
+          <Route path="*" element={<Navigate to={ROUTES.sign_in} />} />
+        </Route>
+      </Routes>
+    </HashRouter>
   );
 }
 

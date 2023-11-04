@@ -94,7 +94,7 @@ export const CreateTrainScheduleForm = () => {
           date={formik.values.arrive_time}
         />
         {formik.errors.arrive_time && <p>{formik.errors.arrive_time}</p>}
-        {stations.length && (
+        {stations.length > 0 && (
           <FormControl fullWidth>
             <InputLabel>Station from</InputLabel>
             <Select
@@ -114,7 +114,7 @@ export const CreateTrainScheduleForm = () => {
         {formik.errors.station_from_id && (
           <p>{formik.errors.station_from_id}</p>
         )}
-        {stations.length && (
+        {stations.length > 0 && (
           <FormControl fullWidth>
             <InputLabel>Station to</InputLabel>
             <Select
@@ -132,7 +132,7 @@ export const CreateTrainScheduleForm = () => {
           </FormControl>
         )}
         {formik.errors.station_to_id && <p>{formik.errors.station_to_id}</p>}
-        {trains.length && (
+        {trains.length > 0 && (
           <FormControl fullWidth>
             <InputLabel>Train</InputLabel>
             <Select
