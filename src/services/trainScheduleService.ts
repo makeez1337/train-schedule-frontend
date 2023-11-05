@@ -4,10 +4,13 @@ import {
   ITrainSchedule,
   IUpdateTrainSchedule,
 } from '../interfaces/trainSchedule';
+import { SortParams } from '../interfaces/sortParams';
 
 export const trainScheduleService = {
-  get: (): Promise<ITrainSchedule[]> =>
-    axiosService.get('train-schedule').then((res) => res.data),
+  get: (sortParams: SortParams | undefined): Promise<ITrainSchedule[]> =>
+    axiosService
+      .get('train-schedule', { params: sortParams })
+      .then((res) => res.data),
   create: (data: ICreateTrainSchedule) =>
     axiosService.post('train-schedule', data).then((res) => res.data),
   findById: (id: string): Promise<ITrainSchedule> =>

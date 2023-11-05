@@ -1,22 +1,24 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
+
 import { trainScheduleService } from '../../services/trainScheduleService';
 import {
   ICreateTrainSchedule,
   ITrainSchedule,
   IUpdateTrainSchedule,
 } from '../../interfaces/trainSchedule';
+import { SortParams } from '../../interfaces/sortParams';
 
-export const getTrainScheduleListThunk = createAsyncThunk(
-  'getTrainScheduleListThunk',
-  async (_, { rejectWithValue }) => {
-    try {
-      const response = await trainScheduleService.get();
-      return response;
-    } catch (e) {
-      return rejectWithValue(e);
-    }
-  },
-);
+export const getTrainScheduleListThunk = createAsyncThunk<
+  ITrainSchedule[],
+  SortParams | undefined
+>('getTrainScheduleListThunk', async (sortParams, { rejectWithValue }) => {
+  try {
+    const response = await trainScheduleService.get(sortParams);
+    return response;
+  } catch (e) {
+    return rejectWithValue(e);
+  }
+});
 
 export const createTrainScheduleThunk = createAsyncThunk<
   void,
