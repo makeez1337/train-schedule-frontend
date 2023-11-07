@@ -1,8 +1,9 @@
 import axios from 'axios';
 
-import config from '../config';
-
-export const axiosService = axios.create({ baseURL: config.BASE_URL });
+// HARDCODED BASE URL
+export const axiosService = axios.create({
+  baseURL: 'https://train-schedule-665e01d19c97.herokuapp.com',
+});
 
 axiosService.interceptors.request.use((config) => {
   config.headers.Authorization = localStorage.getItem('access_token');
