@@ -1,6 +1,5 @@
 import React from 'react';
 import { HashRouter, Route, Routes, Navigate } from 'react-router-dom';
-import config from './config';
 
 import PrivateRoute from './components/PrivateRoute';
 import PublicRoute from './components/PublicRoute';
@@ -14,7 +13,6 @@ import { Station } from './pages/Station';
 
 function App() {
   const { isAuthorized } = useAppSelector((state) => state.auth);
-  console.log(config);
 
   return (
     <HashRouter>
