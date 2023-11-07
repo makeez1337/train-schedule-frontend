@@ -1,8 +1,9 @@
 import axios from 'axios';
 
-// HARDCODED BASE URL
+import config from '../config';
+
 export const axiosService = axios.create({
-  baseURL: 'https://train-schedule-665e01d19c97.herokuapp.com',
+  baseURL: config.BASE_URL,
 });
 
 axiosService.interceptors.request.use((config) => {
