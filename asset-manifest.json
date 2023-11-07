@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/train-schedule-frontend/static/css/main.7ba48ea4.css",
-    "main.js": "/train-schedule-frontend/static/js/main.1b258f13.js",
+    "main.js": "/train-schedule-frontend/static/js/main.7c63457a.js",
     "index.html": "/train-schedule-frontend/index.html",
     "main.7ba48ea4.css.map": "/train-schedule-frontend/static/css/main.7ba48ea4.css.map",
-    "main.1b258f13.js.map": "/train-schedule-frontend/static/js/main.1b258f13.js.map"
+    "main.7c63457a.js.map": "/train-schedule-frontend/static/js/main.7c63457a.js.map"
   },
   "entrypoints": [
     "static/css/main.7ba48ea4.css",
-    "static/js/main.1b258f13.js"
+    "static/js/main.7c63457a.js"
   ]
 }
